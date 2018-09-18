@@ -1,0 +1,9 @@
+/* #### Mobile Phones Portrait #### */
+@media screen and (max-width: 500px) and (orientation: portrait){
+  #lunaLib{font-size: 24px;}
+  .infoTitle{font-size: 35px;}
+}
+
+@media screen and (max-width: 1000px) and (min-width: 500px){
+  .infoTitle{font-size: 55px;}
+}

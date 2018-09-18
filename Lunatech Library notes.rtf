@@ -1,0 +1,143 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww14280\viewh12040\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs48 \cf0 Trainee Project: Lunatech Library
+\fs36 \
+\
+Approach:
+\b0\fs28 \
+\
+
+\b Database entries:
+\b0 \
+Library class contains:\
+	- 
+\b id
+\b0 : a unique ID\
+	- 
+\b name
+\b0 : an office location/an employee name\
+	- 
+\b img
+\b0 : a thumbnail image/ profile picture\
+	- 
+\b location
+\b0 : main city where this employee/office is based\
+	- 
+\b books
+\b0 : a list of all books in this library (by book instance-ID)\
+	- 
+\b type
+\b0 : wether or not this library is an employee\
+	- 
+\b wanted
+\b0 : list of books the employee wants to read (by book title-ID), N/A for offices\
+	- 
+\b number
+\b0 : phone number\
+	- 
+\b mail
+\b0 : email address\
+	- 
+\b favourite
+\b0 : favourite book (by book title-ID)\
+\
+Book Title class contains:\
+	- 
+\b id
+\b0 : a unique ID\
+	- 
+\b name
+\b0 : a title\
+	- 
+\b writer
+\b0 : the writer of the book\
+	- 
+\b year
+\b0 : the year in which the book was first published\
+	- 
+\b img
+\b0 : a thumbnail image\
+	- 
+\b genre
+\b0 : a main genre\
+	- 
+\b copies
+\b0 : amount of copies Lunatech owns\
+	- 
+\b owners
+\b0 : list of ID\'92s of all instances owning a copy of the book (by library-ID)\
+\
+Book Instance class contains:\
+	- 
+\b id
+\b0 : a unique ID\
+ 	- 
+\b serial
+\b0 : serial number of this copy, different from an ID because serial number only distinguish books with the same title\
+	- 
+\b book
+\b0 : a book title-ID corresponding with this book\
+	- 
+\b last_office
+\b0 : library-ID of last office this book has been in\
+	- 
+\b first_employee
+\b0 : library-ID of the employee who has taken this book from the library\
+	- 
+\b owner
+\b0 : library-ID of the employee/office in possession of this book\
+	- 
+\b first_date
+\b0 : date the book has been taken from the library, date of return for offices\
+	- 
+\b expected_return_date
+\b0 : expected date of return, N/A for offices\
+	- 
+\b history
+\b0 : history of possession starting from. Resets when returned to library (example of a history of possession: last office, first borrower, second borrower, third borrower)\
+\
+
+\b Interface functionalities:\
+
+\b0 \
+Initial pages:\
+	-
+\b home
+\b0  (Search for a specific book or browse a library, login/view profile, for admins: add book)\
+\
+Referred pages:\
+	
+\b -library information\
+	
+\b0 0- a button that returns the user to the home page
+\b \
+	
+\b0 1- The name of this library and a thumbnail image representing this library\
+	1B- for employees: a phone number and email address\
+	1C- A list of book titles this library possesses that are in your wanted list (if more than 3, display something like: \'93has book1, book2, book3, and more books you want to read.\'94)\
+	2- a tab-based menu where the user can select the following options:\
+	display 3A, (for employees) display 3B, or 3C\
+	3A- A mosaic tile style visual library of the thumbnails, titles and writers of all books within this library.\
+	3B-  A mosaic tile style visual library of the thumbnails, titles and writers of all books the employee would like to read in the future.\
+	3C- A google maps embedded frame of the library\'92s/employee\'92s registered main location\
+\
+	
+\b -book information\
+	
+\b0 0- a button that returns the user to the home page (and an edit button for admins)
+\b \
+	
+\b0 1- The name of this book, its writer, publishing date and a thumbnail image representing this book\
+	1B- a selector for serial numbers (when referred from a library, this will automatically select the serial number of the copy that brought you to this page)\
+	1C- the name of the library that is in possession of the selected copy\
+	1D- option to borrow copy from current owner or return to a library\
+	2- a tab-based menu where the user can select the following options:\
+	display 3A or display 3B\
+	3A- A mosaic tile style visual library of the thumbnails, names, phone numbers and locations of all libraries in possession of a copy of this book.\
+	3B- A google maps embedded frame of this copy\'92s registered main location\
+	}

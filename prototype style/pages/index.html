@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+
+<!-- This example shows how a 'book information' page would look -->
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="../styles/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Lunatech Library</title>
+</head>
+
+<body class="bg-light" style="max-width: 100%; overflow-x:hidden">
+
+  <header>
+    <!--
+    <nav class="navbar-dark bg-secondary d-flex justify-content-between" id="logIn" style="height: 40px">
+      <div class="mt-1">
+        <a href="#" class="text-white ml-3" style="font-size: 20px"><i class="mr-3  material-icons align-middle" style="font-size: 30px">account_circle</i>Sign in</a>
+      </div>
+      <div style="display: none">
+        <button class="btn btn-outline-light mr-0 pl-1" type="submit" style="height: 40px"><i class="mr-2  material-icons align-middle" style="font-size: 30px">add_circle</i>Submit new book</button>
+      </div>
+    </nav>
+    -->
+    <nav class="navbar-dark bg-secondary d-flex justify-content-between d-none" id="profile" style="height: 40px">
+      <div class="mt-1" style="max-height: 35px; overflow-y: hidden">
+        <a href="#" class="text-white ml-3" style="font-size: 20px"><i class="mr-3  material-icons align-middle" style="font-size: 30px">account_circle</i>Your profile</a>
+      </div>
+      <div class="">
+        <button class="btn btn-outline-light mr-0 pl-1" type="submit" style="height: 40px"><i class="mr-2  material-icons align-middle" style="font-size: 30px">edit</i>Edit book</button>
+      </div>
+      <div class="">
+        <button class="btn btn-outline-light mr-0 pl-1" type="submit" style="height: 40px"><i class="mr-2  material-icons align-middle" style="font-size: 30px">add_circle</i>Submit new book</button>
+      </div>
+    </nav>
+    <nav class="navbar-dark bg-dark shadow-sm d-flex justify-content-between" style="height: 85px">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <div class="ml-2 w-25">
+          <img src="../resources/images/global/icon.png" class="img-fluid w-50" alt="">
+          <strong class="mt-1 h1 align-middle" id="lunaLib">Lunatech Libraries</strong>
+        </div>
+      </a>
+      <button class="navbar-toggler collapsed mr-2 h-50 mt-3" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+    <div class="bg-dark collapse" id="navbarHeader" style="">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-md-7 py-2">
+            <div class="mb-2" style="background-color: white; height: 1px"></div>
+            <h4 class="text-white"><i class="material-icons">book</i> Search for books!</h4>
+            <p class="text-muted">Book titles, writers, locations, serial number</p>
+            <form>
+              <div class="form-group d-flex justify-content-between">
+                <input type="search" required="true" class="form-control" name="term" id="term" aria-describedby="emailHelp" placeholder="Enter something...">
+                <button type="submit" class="btn btn-danger" style="height: 40px"><i class="material-icons">search</i></button>
+              </div>
+            </form>>
+          </div>
+          <div class="col-sm-4 offset-md-1 py-2">
+            <div class="mb-2" style="background-color: white; height: 1px"></div>
+            <h4 class="text-white"><i class="material-icons">library_books</i> Libraries</h4>
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-danger">Rotterdam</a></li>
+              <li><a href="#" class="text-danger">Amsterdam</a></li>
+              <li><a href="#" class="text-danger">Paris</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main role="main">
+  <div class="bg-muted container mt-3 libInfo">
+    <div class="row align-items-center justify-content-center">
+      <img src="../resources/images/global/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="width: 150px">
+    </div>
+    <blockquote class="blockquote text-center">
+      <h1 class="align-top text-center display-1 infoTitle">Very long book title: and the long title of titles</h1>
+      <footer class="blockquote-footer">Mister Long Name Man <cite title="Source Title">2018</cite></footer>
+    </blockquote>
+  </div>
+
+    <div class="bg-secondary libInfo">
+      <div class="row align-items-center justify-content-center mt-2">
+        <p class="col mt-3 mx-5 text-light text-center">Select the serial number a copy. If you were linked here via a library or colleague, the serial number will automatically be the book they posses.</p>
+        <div class="w-100"></div>
+        <form class="form-group">
+          <select class="form-control" name="serialNumber" id="selectSerial">
+            <option name="0001" value="0001">0001</option>
+          </select>
+        </form>
+        <div class="w-100"></div>
+        <small class="col mx-5 text-white-50 mb-1 text-center">This copy is currently under the possession of Mist Long Name Man.</small>
+        <div class="w-100"></div>
+        <button class="btn btn-danger mb-4 mx-2"><i class="material-icons align-middle mr-1">archive</i>Borrow from current owner</button><button class="btn btn-danger mb-4 mx-2"><i class="material-icons align-middle mr-1">unarchive</i>Return copy to a library</button>
+      </div>
+    </div>
+
+    <div class="row justify-content-start">
+      <button class="col bg-light">Book title owners</button>
+      <button class="col bg-light">Track copy</button>
+    </div>
+
+    <div class="row mx-4 align-items-center justify-content-center" id="Owners">
+      <div class="m-3 col row align-items-center justify-content-center">
+        <img src="../resources/images/global/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+        <div class="w-100"></div>
+        <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+        <div class="w-100"></div>
+        <small>Rotterdam</small>
+      </div>
+
+      <div class="m-3 col row align-items-center justify-content-center">
+        <img src="../resources/images/global/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+        <div class="w-100"></div>
+        <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+        <div class="w-100"></div>
+        <small>Rotterdam</small>
+      </div>
+
+      <div class="m-3 col row align-items-center justify-content-center">
+        <img src="../resources/images/global/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+        <div class="w-100"></div>
+        <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+        <div class="w-100"></div>
+        <small>Rotterdam</small>
+      </div>
+
+      <div class="m-3 col row align-items-center justify-content-center">
+        <img src="../resources/images/global/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+        <div class="w-100"></div>
+        <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+        <div class="w-100"></div>
+        <small>Rotterdam</small>
+      </div>
+
+      <div class="m-3 col row align-items-center justify-content-center">
+        <img src="../resources/images/global/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+        <div class="w-100"></div>
+        <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+        <div class="w-100"></div>
+        <small>Rotterdam</small>
+      </div>
+
+      <div class="m-3 col row align-items-center justify-content-center">
+        <img src="../resources/images/global/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+        <div class="w-100"></div>
+        <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+        <div class="w-100"></div>
+        <small>Rotterdam</small>
+      </div>
+    </div>
+
+    <div class="row mx-4 align-items-center justify-content-center" id="Location">
+      <iframe width="600" height="450" frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJfcRUX2C3xUcRhUtelay7KVI&key=..." allowfullscreen></iframe>
+    </div>
+  </main>
+  <!-- Optional JavaScript -->
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
