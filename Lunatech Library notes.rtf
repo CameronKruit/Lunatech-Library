@@ -19,6 +19,9 @@ Library class contains:\
 \b id
 \b0 : a unique ID\
 	- 
+\b admin
+\b0 : specify wether or not user is an admin, offices are admins by default\
+	- 
 \b name
 \b0 : an office location/an employee name\
 	- 
@@ -44,7 +47,7 @@ Library class contains:\
 \b0 : email address\
 	- 
 \b favourite
-\b0 : favourite book (by book title-ID)\
+\b0 : favourite books (by book title-ID)\
 \
 Book Title class contains:\
 	- 
@@ -117,7 +120,7 @@ Referred pages:\
 \b0 0- a button that returns the user to the home page
 \b \
 	
-\b0 1- The name of this library and a thumbnail image representing this library\
+\b0 1- The name of this library and a thumbnail image representing this library, Also a star and the title \'93librarian\'94 or \'93library\'94 depending on if this library is an admin or an office.\
 	1B- for employees: a phone number and email address\
 	1C- A list of book titles this library possesses that are in your wanted list (if more than 3, display something like: \'93has book1, book2, book3, and more books you want to read.\'94)\
 	2- a tab-based menu where the user can select the following options:\
@@ -125,19 +128,37 @@ Referred pages:\
 	3A- A mosaic tile style visual library of the thumbnails, titles and writers of all books within this library.\
 	3B-  A mosaic tile style visual library of the thumbnails, titles and writers of all books the employee would like to read in the future.\
 	3C- A google maps embedded frame of the library\'92s/employee\'92s registered main location\
+	3D- A mosaic tile style visual library of the thumbnails, titles and writers of all the employee\'92s favourite books.\
 \
 	
 \b -book information\
 	
-\b0 0- a button that returns the user to the home page (and an edit button for admins)
+\b0 0- a button that returns the user to the home page (and an edit button for admins)\
+	0B- buttons to add to wanted list or favourites list
 \b \
 	
 \b0 1- The name of this book, its writer, publishing date and a thumbnail image representing this book\
-	1B- a selector for serial numbers (when referred from a library, this will automatically select the serial number of the copy that brought you to this page)\
+	1B- a selector for serial numbers (only when there\'92s more than one copy of the book, when referred from a library, this will automatically select the serial number of the copy that brought you to this page)\
 	1C- the name of the library that is in possession of the selected copy\
-	1D- option to borrow copy from current owner or return to a library\
+	1D- option to borrow copy from current owner or return to a library (only give the ability to return if the copy is in possession)\
 	2- a tab-based menu where the user can select the following options:\
 	display 3A or display 3B\
 	3A- A mosaic tile style visual library of the thumbnails, names, phone numbers and locations of all libraries in possession of a copy of this book.\
 	3B- A google maps embedded frame of this copy\'92s registered main location\
+\
+	
+\b -profile edit information\
+	(when the library information page is one that has the same ID as your profile)\
+	
+\b0 The same as a \'91library information\'92 page until you press the \'91edit\'92 button\
+	0-Change your main location\
+	1-Change your phone number\
+	2-Add/remove books from your favourite list\
+\
+
+\b\fs36 Notes on other functionalities:
+\b0\fs28 \
+\
+	- Google authentication\
+	- SQL-injection protection\
 	}
