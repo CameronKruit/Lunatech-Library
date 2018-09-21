@@ -3,6 +3,7 @@ package controllers
 import javax.inject._
 
 import play.api.mvc._
+import play.api.mvc.Cookie
 
 /**
  * This controller creates an `Action` to handle HTTP requests to the
