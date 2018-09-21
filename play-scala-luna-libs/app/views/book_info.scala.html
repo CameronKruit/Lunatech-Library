@@ -1,0 +1,126 @@
+@(style: String = "scala")
+
+<main role="main">
+
+    <!-- Book info and user buttons -->
+    <div class="bg-muted container mt-3 libInfo">
+
+        <!-- Thumbnail -->
+        <div class="row align-items-center justify-content-center">
+            <img src="/assets/images/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="width: 150px">
+        </div>
+
+        <!-- Title and writer -->
+        <blockquote class="blockquote text-center">
+            <h1 class="align-top text-center display-1 infoTitle">Very long book title: and the long title of titles</h1>
+            <footer class="blockquote-footer">Mister Long Name Man <cite title="Source Title">2018</cite></footer>
+        </blockquote>
+
+        <!-- Stars -->
+        <h1 class="text-center mb-5">
+            <i class="mx-1  material-icons align-middle star" style="font-size: 70px">star</i>
+            <i class="mx-1  material-icons align-middle star" style="font-size: 70px">star</i>
+            <i class="mx-1  material-icons align-middle star" style="font-size: 70px">star</i>
+            <i class="mx-1  material-icons align-middle star" style="font-size: 70px">star_half</i>
+            <i class="mx-1  material-icons align-middle star" style="font-size: 70px">star_border</i>
+        </h1>
+
+        <!-- Buttons edit book, favourite, wanted, rate -->
+        <div class="row align-items-center justify-content-center">
+            <div class="m-1">
+                <button class="btn btn-outline-dark mr-0 pl-1" type="submit" style="height: 40px"><i class="mr-2  material-icons align-middle" style="font-size: 30px">edit</i>Edit book</button>
+            </div>
+            <div class="m-1">
+                <button class="btn btn-outline-dark mr-0 pl-1" type="submit" style="height: 40px"><i class="mr-2  material-icons align-middle" style="font-size: 30px">stars</i>Add to favourites</button>
+            </div>
+            <div class="m-1">
+                <button class="btn btn-outline-dark mr-0 pl-1" type="submit" style="height: 40px"><i class="mr-2  material-icons align-middle" style="font-size: 30px">playlist_add</i>Add to wanted list</button>
+            </div>
+            <div class="m-1">
+                <button class="btn btn-outline-dark mr-0 pl-1" type="submit" style="height: 40px"><i class="mr-2  material-icons align-middle" style="font-size: 30px">star</i>Rate</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- copy specific controls -->
+    <div class="bg-secondary libInfo">
+        <div class="row align-items-center justify-content-center mt-2">
+            <p class="col mt-3 mx-5 text-light text-center">Select the serial number a copy. If you were linked here via a library or colleague, the serial number will automatically be the book they posses.</p>
+            <div class="w-100"></div>
+            <form class="form-group">
+                <select class="form-control" name="serialNumber" id="selectSerial">
+                    <option name="0001" value="0001">0001</option>
+                </select>
+            </form>
+            <div class="w-100"></div>
+            <small class="col mx-5 text-white-50 mb-1 text-center">This copy is currently under the possession of Mist Long Name Man.</small>
+            <div class="w-100"></div>
+            <small class="col mx-5 text-white-50 mb-3 text-center">This copy has been taken on 01dd/01mm/1874yy and is expected to be returned on 01/01/2018 (keep in mind this estimate may be inaccurate).</small>
+            <div class="w-100"></div>
+            <button class="btn btn-danger mb-4 mx-2"><i class="material-icons align-middle mr-1">archive</i>I took this copy</button><button class="btn btn-danger mb-4 mx-2"><i class="material-icons align-middle mr-1">unarchive</i>Return copy to a library</button>
+        </div>
+    </div>
+
+    <!-- mosaic tile gallery -->
+    <div class="row mt-3 mx-4 align-items-center justify-content-center" id="Owners">
+
+        <div class="my-5 row align-items-center justify-content-center">
+            <h1 class="w-100 text-center">Rotterdam</h1>
+            <div class="m-3 col row align-items-center justify-content-center">
+                <img src="/assets/images/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+                <div class="w-100"></div>
+                <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+                <div class="w-100"></div>
+                <small>Long.Name.Man@@lunatech.nl</small>
+            </div>
+            <div class="m-3 col row align-items-center justify-content-center">
+                <img src="/assets/images/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+                <div class="w-100"></div>
+                <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+                <div class="w-100"></div>
+                <small>Long.Name.Man@@lunatech.nl</small>
+            </div>
+        </div>
+        <div class="bg-dark w-75" style="height: 1px"></div>
+        <div class="my-5 row align-items-center justify-content-center">
+            <h1 class="w-100 text-center">Amsterdam</h1>
+            <div class="m-3 col row align-items-center justify-content-center">
+                <img src="/assets/images/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+                <div class="w-100"></div>
+                <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+                <div class="w-100"></div>
+                <small>Long.Name.Man@@lunatech.nl</small>
+            </div>
+            <div class="m-3 col row align-items-center justify-content-center">
+                <img src="/assets/images/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+                <div class="w-100"></div>
+                <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+                <div class="w-100"></div>
+                <small>Long.Name.Man@@lunatech.nl</small>
+            </div>
+        </div>
+        <div class="bg-dark w-75" style="height: 1px"></div>
+        <div class="my-5 row align-items-center justify-content-center">
+            <h1 class="w-100 text-center">Paris</h1>
+            <div class="m-3 col row align-items-center justify-content-center">
+                <img src="/assets/images/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+                <div class="w-100"></div>
+                <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+                <div class="w-100"></div>
+                <small>Long.Name.Man@@lunatech.nl</small>
+            </div>
+            <div class="m-3 col row align-items-center justify-content-center">
+                <img src="/assets/images/no_avatar.jpg" class="img-thumbnail mt-2 pull-center" style="max-width: 150px; min-width: 150px">
+                <div class="w-100"></div>
+                <p><abbr title="Phone Number">Mister Long Name Man</abbr></p>
+                <div class="w-100"></div>
+                <small>Long.Name.Man@@lunatech.nl</small>
+            </div>
+        </div>
+    </div>
+
+    <!--div class="row mx-4 align-items-center justify-content-center" id="Location">
+        <iframe width="600" height="450" frameborder="0" style="border:0"
+                src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJfcRUX2C3xUcRhUtelay7KVI&key=..." allowfullscreen></iframe>
+    </div-->
+</main>

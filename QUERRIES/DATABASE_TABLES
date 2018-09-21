@@ -1,0 +1,36 @@
+CREATE TABLE libraries (
+	library_id SERIAL PRIMARY KEY,-- id: a unique ID
+	type_is_office BOOLEAN DEFAULT FALSE,-- type: wether or not this library is an office
+	admin BOOLEAN DEFAULT FALSE,-- admin: specify wether or not user is an admin, offices are admins by default
+	name VARCHAR(100),-- name: an office location/an employee name
+	img_url TEXT DEFAULT 'http://forum.frialigan.se/styles/canvas/theme/images/no_avatar.jpg',-- img: a thumbnail image/ profile picture
+	location VARCHAR(30),-- location: main city where this employee/office is based
+	books TEXT DEFAULT 'N/A',-- books: a list of all books in this library (by book instance-ID) this is csv ("book1_id,book2_id,book3_id")
+	wanted TEXT DEFAULT 'N/A',-- wanted: list of books the employee wants to read (by book title-ID), N/A for offices  this is csv ("book1_id,book2_id,book3_id")
+	phone_number VARCHAR(20) DEFAULT 'N/A',-- number: phone number
+	mail_address VARCHAR(100),-- mail: email address
+	favourite_books TEXT DEFAULT 'N/A'-- favourites: favourite books (by book title-ID)
+);
+
+CREATE TABLE book_titles (
+	title_id SERIAL PRIMARY KEY,-- id: a unique ID
+	name VARCHAR(100),-- name: a title
+	writer VARCHAR(100),-- writer: the writer of the book
+	year VARCHAR(8),-- year: the year in which the book was first published
+	img_url TEXT DEFAULT 'http://forum.frialigan.se/styles/canvas/theme/images/no_avatar.jpg',-- img: a thumbnail image
+	genre TEXT DEFAULT 'N/A',-- genre: a main genre,  this is csv ("genre1,genre2,genre3")
+	copy_amount INT,-- copies: amount of copies Lunatech owns
+	owners TEXT-- owners: list of ID’s of all instances owning a copy of the book (by library-ID) this is csv ("library1_id,library2_id,library_id")
+);
+
+CREATE TABLE book_copies (
+	copy_id SERIAL PRIMARY KEY,-- id: a unique ID
+ 	serial_number VARCHAR(10),-- serial: serial number of this copy, different from an ID because serial number only distinguish books with the same title
+	title_id INTEGER REFERENCES book_titles(title_id),-- book: a book title-ID corresponding with this book
+	last_office INTEGER REFERENCES libraries(library_id),-- last_office: library-ID of last office this book has been in
+	first_employee INTEGER REFERENCES libraries(library_id),-- first_employee: library-ID of the employee who has taken this book from the library
+	current_owner INTEGER REFERENCES libraries(library_id),-- owner: library-ID of the employee/office in possession of this book
+	first_date DATE,-- first_date: date the book has been taken from the library, date of return for offices
+	return_date DATE,-- expected_return_date: expected date of return, N/A for offices
+	history TEXT-- history: history of possession starting from. Resets when returned to library (example of a history of possession: last office, first borrower, second borrower, third borrower)
+);

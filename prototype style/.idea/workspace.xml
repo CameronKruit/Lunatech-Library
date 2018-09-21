@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="dac7b3fb-926d-4110-8cae-f43b7b1995f1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/Module.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/controllers/AsyncController.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/controllers/CountController.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/controllers/HomeController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../play-scala-luna-libs/app/controllers/HomeController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/filters/ExampleFilter.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/services/ApplicationTimer.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/services/Counter.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/views/index.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/../play-scala-luna-libs/app/views/index.scala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/views/main.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/../play-scala-luna-libs/app/views/main.scala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/app/views/welcome.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/../play-scala-luna-libs/app/views/book_info.scala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/../play-scala-luna-libs/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../play-scala-luna-libs/conf/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/../play-scala-luna-libs/conf/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/play-scala-luna-libs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../play-scala-luna-libs/play-scala-luna-libs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/public/images/external.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/public/images/favicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/public/images/header-pattern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/public/javascripts/hello.js" beforeDir="false" afterPath="$PROJECT_DIR$/../play-scala-luna-libs/public/javascripts/scripts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../play-scala-luna-libs/public/stylesheets/main.css" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1798750992">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="html" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTML" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="739">
+              <caret line="212" column="7" lean-forward="true" selection-end-line="212" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../play-scala-luna-libs" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="x" value="134" />
+    <option name="y" value="87" />
+    <option name="width" value="1297" />
+    <option name="height" value="813" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="prototype style" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype style" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="prototype style" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prototype style" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="projectSyncType">
+      <map>
+        <entry key="$USER_HOME$/IdeaProjects/online-sport-system" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="dac7b3fb-926d-4110-8cae-f43b7b1995f1" name="Default Changelist" comment="" />
+      <created>1537443822417</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1537443822417</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Learn" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/pages/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="739">
+          <caret line="212" column="7" lean-forward="true" selection-end-line="212" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

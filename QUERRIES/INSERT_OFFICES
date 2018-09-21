@@ -1,0 +1,10 @@
+INSERT INTO libraries(type_is_office, name, img_url, location, phone_number, mail_address)
+VALUES (TRUE, 'Lunatech Office Rotterdam (NL)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Flag_of_Rotterdam.svg/1200px-Flag_of_Rotterdam.svg.png', 'Rotterdam (NL)', '+31 10 750 2600' , 'lunatech@lunatech.nl' );
+
+INSERT INTO libraries(type_is_office, name, img_url, location, phone_number, mail_address)
+VALUES (TRUE, 'Lunatech Office Amsterdam (NL)', 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Flag_of_Amsterdam.svg/320px-Flag_of_Amsterdam.svg.png', 'Amsterdam (NL)', '+31 10 750 2600' , 'lunatech@lunatech.nl' );
+
+INSERT INTO libraries(type_is_office, name, img_url, location, phone_number, mail_address)
+VALUES (TRUE, 'Lunatech Office Chessy (FR)', 'https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/1200px-Flag_of_France.svg.png', 'Chessy (FR)', '+33 1 82 88 56 64' , 'lunatech@lunatech.nl' );
+
+SELECT * FROM libraries WHERE type_is_office = TRUE;
