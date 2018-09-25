@@ -12,8 +12,34 @@ Approach:
 \b0\fs28 \
 \
 
-\b Database entries:
-\b0 \
+\b Database entries:\
+
+\b0 Office class contains:\
+	- 
+\b id
+\b0 : a unique ID\
+	- 
+\b name
+\b0 : an office location/an employee name\
+	- 
+\b img
+\b0 : a thumbnail image/ profile picture\
+	- 
+\b images
+\b0 : a collection of image urls (CSV), will be used for pictures that\'92ll assist users in finding the library\
+	- 
+\b location
+\b0 : main city where this employee/office is based\
+	- 
+\b books
+\b0 : a list of all books in this library (by book instance-ID)\
+	- 
+\b number
+\b0 : phone number\
+	- 
+\b mail
+\b0 : email address\
+\
 Library class contains:\
 	- 
 \b id
@@ -33,9 +59,6 @@ Library class contains:\
 	- 
 \b books
 \b0 : a list of all books in this library (by book instance-ID)\
-	- 
-\b type
-\b0 : wether or not this library is an employee\
 	- 
 \b wanted
 \b0 : list of books the employee wants to read (by book title-ID), N/A for offices\

@@ -15,7 +15,8 @@ import java.util.Collections
 
 //import play.db._
 import play.api.db._
-
+import db_classes._
+import scala.collection.mutable.ListBuffer
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
@@ -91,7 +92,7 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit
         // Use or store profile information
         db.withConnection { connection =>
           play.api.Logger.debug("-------------DB CONNECTION START----------------")
-          var q = "SELECT * FROM libraries"
+          var q = "SELECT * FROM offices"
           val stmt = connection.createStatement()
           val rs = stmt.executeQuery(q)
           while (rs.next()) {
@@ -99,9 +100,49 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit
           }
           play.api.Logger.debug("-------------DB CONNECTION END------------------")
         }
+
+        getLibraries(db, "")
       }
     }
     Ok("performed task")
+  }
+
+  def getLibraries (db : Database, s : String) : List[library] = {
+    var l = new ListBuffer[library]
+    db.withConnection { connection =>
+      play.api.Logger.debug("-------------DB CONNECTION START----------------")
+      var q = "SELECT * FROM libraries" + s
+      val stmt = connection.createStatement()
+      val rs = stmt.executeQuery(q)
+      while (rs.next()) {
+        val library_id = rs.getInt("library_id")
+        val admin = rs.getBoolean("admin")
+        val name = rs.getString("name")
+        val img_url = rs.getString("img_url")
+        val location = rs.getString("location")
+        val books = rs.getString("books")
+        val wanted = rs.getString("wanted")
+        val phone_number = rs.getString("phone_number")
+        val mail_address = rs.getString("mail_address")
+        val favourite_books = rs.getString("favourite_books")
+        val sub_id = rs.getInt("sub_id")
+        l += new library(library_id, admin, name, img_url, location, books, wanted, phone_number, mail_address, favourite_books, sub_id)
+      }
+      play.api.Logger.debug("-------------LIBRARY RESULTS: " + l.length + "------------------")
+      play.api.Logger.debug("-------------DB CONNECTION END------------------")
+    }
+    return l.toList
+  }
+
+  def createLibrary (db : Database, l : library) : Unit = {
+    db.withConnection { connection =>
+      play.api.Logger.debug("-------------DB CONNECTION START----------------")
+      var q = "INSERT INTO libraries(admin, name, img_url, location, books, wanted, phone_number, mail_address, favourite_books, sub_id) VALUES" + l.admin + l.name + l.img_url + l.location + l.books + l.wanted + l.phone_number + l.mail_address + l.favourite_books + l.sub_id + ");"
+      val stmt = connection.createStatement()
+      stmt.executeUpdate(q)
+      play.api.Logger.debug("-------------CREATING LIBRARY ENTRY------------------")
+      play.api.Logger.debug("-------------DB CONNECTION END------------------")
+    }
   }
 
 }

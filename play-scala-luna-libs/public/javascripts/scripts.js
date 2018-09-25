@@ -123,7 +123,7 @@ function sendAuthRequest (id_token) {
     console.log("setting request header");
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
-       console.log('Signed in as: ' + xhr.responseText);
+       console.log('message: ' + xhr.responseText);
     };
     xhr.send('idtoken=' + id_token);
 }
