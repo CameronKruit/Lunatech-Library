@@ -29,9 +29,9 @@ function onSignIn(googleUser) {
   if(d[1] != "lunatech.nl") {
     signOut();
   } else {
-  if(!loggedIn) {
+  //if(!loggedIn) {
     sendAuthRequest(id_token);
-    }
+    //}
   }
   if(!loggedIn) {
     location.reload();
@@ -115,11 +115,15 @@ function disableVisibility (id, state) {
 }
 
 function sendAuthRequest (id_token) {
+    console.log("received token: " + id_token);
+     console.log("sending auth request");
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://localhost:9000/auth');
+    console.log("opening xhr");
+    xhr.open('POST', '/auth');
+    console.log("setting request header");
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
-      console.log('Signed in as: ' + xhr.responseText);
+       console.log('Signed in as: ' + xhr.responseText);
     };
     xhr.send('idtoken=' + id_token);
 }

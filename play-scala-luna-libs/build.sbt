@@ -19,3 +19,6 @@ libraryDependencies += jdbc
 libraryDependencies += "org.postgresql" % "postgresql" % "42.2.5"
 //libraryDependencies += "com.typesafe.play" %% "play-slick" % "1.1.0"
 //libraryDependencies += "com.typesafe.play" %% "play-slick-evolutions" % "1.1.0"
+
+// https://mvnrepository.com/artifact/com.google.api-client/google-api-client
+libraryDependencies += "com.google.api-client" % "google-api-client" % "1.25.0"
