@@ -12,12 +12,16 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier
 import com.google.api.client.http.javanet.NetHttpTransport
 import com.google.api.client.json.jackson2.JacksonFactory
 import java.util.Collections
+
+//import play.db._
+import play.api.db._
+
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
  */
 @Singleton
-class HomeController @Inject()(cc: ControllerComponents) (implicit assetsFinder: AssetsFinder)
+class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit assetsFinder: AssetsFinder)
   extends AbstractController(cc) {
 
   /**
@@ -67,19 +71,37 @@ class HomeController @Inject()(cc: ControllerComponents) (implicit assetsFinder:
         play.api.Logger.info("User ID: " + userId);
 
         // Get profile information from payload
-        //val email = payload.getEmail();
-        //val name = payload.get("name");
-        //val pictureUrl = payload.get("picture");
+        val id_sub = payload.get("sub");
+        val email = payload.getEmail();
+        val domain = payload.get("hd");
+        val name = payload.get("name");
+        val pictureUrl = payload.get("picture");
+        play.api.Logger.debug("-----------------------------------------");
+        play.api.Logger.debug("-------------USER INFORMATON-------------");
+        play.api.Logger.debug("-----------------------------------------");
+        play.api.Logger.info("User ID_sub: " + id_sub);
+        play.api.Logger.info("User name: " + name);
+        play.api.Logger.info("User email: " + email);
+        play.api.Logger.info("User domain: " + domain);
+        play.api.Logger.info("User picture url: " + pictureUrl);
+        play.api.Logger.debug("-----------------------------------------");
         //val locale = payload.get("locale");
         //val familyName = payload.get("family_name");
         //val givenName = payload.get("given_name");
-
         // Use or store profile information
-        // ...
-        Ok(email)
+        db.withConnection { connection =>
+          play.api.Logger.debug("-------------DB CONNECTION START----------------")
+          var q = "SELECT * FROM libraries"
+          val stmt = connection.createStatement()
+          val rs = stmt.executeQuery(q)
+          while (rs.next()) {
+            play.api.Logger.debug(rs.getString("name"))
+          }
+          play.api.Logger.debug("-------------DB CONNECTION END------------------")
+        }
       }
     }
-    Ok("")
+    Ok("performed task")
   }
 
 }

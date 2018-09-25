@@ -22,3 +22,8 @@ libraryDependencies += "org.postgresql" % "postgresql" % "42.2.5"
 
 // https://mvnrepository.com/artifact/com.google.api-client/google-api-client
 libraryDependencies += "com.google.api-client" % "google-api-client" % "1.25.0"
+
+// https://mvnrepository.com/artifact/com.typesafe.play/anorm
+libraryDependencies += jdbc
+
+
