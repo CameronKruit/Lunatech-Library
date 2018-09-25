@@ -14,6 +14,7 @@ function init() {
 
 function onSignIn(googleUser) {
   var profile = googleUser.getBasicProfile();
+  var id_token = googleUser.getAuthResponse().id_token;
   userID = profile.getId();
   setCookie("lunatech.lunatech_library.ID", userID, 1);
   setCookie("lunatech.lunatech_library.signState", profile.getId(), 1);
@@ -22,7 +23,16 @@ function onSignIn(googleUser) {
   console.log('Name: ' + profile.getName());
   console.log('Image URL: ' + profile.getImageUrl());
   console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  var d = profile.getEmail().split("@")
+  console.log('Domain: ' + d[1]);
   console.log('------------------------------------------');
+  if(d[1] != "lunatech.nl") {
+    signOut();
+  } else {
+  if(!loggedIn) {
+    sendAuthRequest(id_token);
+    }
+  }
   if(!loggedIn) {
     location.reload();
   }
@@ -86,6 +96,10 @@ function checkLogState() {
     } else {
         loggedIn = false;
         console.log('not logged in');
+        console.log(window.location.href);
+        if(window.location.href != "http://localhost:9000/") {
+            window.location.href = "/";
+        }
     }
 }
 
@@ -98,4 +112,14 @@ function disableVisibility (id, state) {
         x[i].style.display = 'none';
         }
     }
+}
+
+function sendAuthRequest (id_token) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://localhost:9000/auth');
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+      console.log('Signed in as: ' + xhr.responseText);
+    };
+    xhr.send('idtoken=' + id_token);
 }
