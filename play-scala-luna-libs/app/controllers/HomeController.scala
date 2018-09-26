@@ -72,11 +72,11 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit
         play.api.Logger.info("User ID: " + userId);
 
         // Get profile information from payload
-        val id_sub = payload.get("sub");
-        val email = payload.getEmail();
-        val domain = payload.get("hd");
-        val name = payload.get("name");
-        val pictureUrl = payload.get("picture");
+        val id_sub = payload.get("sub").toString;
+        val email = payload.getEmail().toString;
+        val domain = payload.get("hd").toString;
+        val name = payload.get("name").toString;
+        val pictureUrl = payload.get("picture").toString;
         play.api.Logger.debug("-----------------------------------------");
         play.api.Logger.debug("-------------USER INFORMATON-------------");
         play.api.Logger.debug("-----------------------------------------");
@@ -100,8 +100,11 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit
           }
           play.api.Logger.debug("-------------DB CONNECTION END------------------")
         }
-
-        getLibraries(db, "")
+        val domain2 = domain.substring(0, 9)
+        play.api.Logger.debug("DOMAIN OWNER: " + domain2);
+        if(getLibraries(db, " WHERE sub_id = '" + id_sub + "'").length == 0 && domain2 == "lunatech.") {
+          createLibrary(db, library(0, false, name, pictureUrl, "N/A", "N/A", "N/A", "N/A", email, "N/A", id_sub, ""))
+        }
       }
     }
     Ok("performed task")
@@ -111,7 +114,7 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit
     var l = new ListBuffer[library]
     db.withConnection { connection =>
       play.api.Logger.debug("-------------DB CONNECTION START----------------")
-      var q = "SELECT * FROM libraries" + s
+      var q = "SELECT * FROM libraries" + s + ";"
       val stmt = connection.createStatement()
       val rs = stmt.executeQuery(q)
       while (rs.next()) {
@@ -125,8 +128,9 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit
         val phone_number = rs.getString("phone_number")
         val mail_address = rs.getString("mail_address")
         val favourite_books = rs.getString("favourite_books")
-        val sub_id = rs.getInt("sub_id")
-        l += new library(library_id, admin, name, img_url, location, books, wanted, phone_number, mail_address, favourite_books, sub_id)
+        val sub_id = rs.getString("sub_id")
+        val date_added = rs.getDate("date_added").toString
+        l += new library(library_id, admin, name, img_url, location, books, wanted, phone_number, mail_address, favourite_books, sub_id, date_added)
       }
       play.api.Logger.debug("-------------LIBRARY RESULTS: " + l.length + "------------------")
       play.api.Logger.debug("-------------DB CONNECTION END------------------")
@@ -137,7 +141,8 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit
   def createLibrary (db : Database, l : library) : Unit = {
     db.withConnection { connection =>
       play.api.Logger.debug("-------------DB CONNECTION START----------------")
-      var q = "INSERT INTO libraries(admin, name, img_url, location, books, wanted, phone_number, mail_address, favourite_books, sub_id) VALUES" + l.admin + l.name + l.img_url + l.location + l.books + l.wanted + l.phone_number + l.mail_address + l.favourite_books + l.sub_id + ");"
+      var q = "INSERT INTO libraries(admin, name, img_url, location, books, wanted, phone_number, mail_address, favourite_books, sub_id) VALUES ('" + l.admin + "','" + l.name + "','" + l.img_url + "','" + l.location + "','" + l.books + "','" + l.wanted + "','" + l.phone_number + "','" + l.mail_address + "','" + l.favourite_books + "','" + l.sub_id + "');"
+      play.api.Logger.debug("QUERY:  " + q)
       val stmt = connection.createStatement()
       stmt.executeUpdate(q)
       play.api.Logger.debug("-------------CREATING LIBRARY ENTRY------------------")
