@@ -1,0 +1,2 @@
+UPDATE libraries SET admin = TRUE WHERE mail_address = 'cameron.kruit@lunatech.nl';
+SELECT * FROM libraries;

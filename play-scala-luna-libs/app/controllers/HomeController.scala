@@ -61,6 +61,7 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit
       idTokenString = i
     }
 
+    var outputString = ""
     if (idTokenString != null && idTokenString != "" && idTokenString != "None") {
       try {
         val idToken: GoogleIdToken = verifier.verify(idTokenString);
@@ -102,12 +103,15 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) (implicit
         }
         val domain2 = domain.substring(0, 9)
         play.api.Logger.debug("DOMAIN OWNER: " + domain2);
-        if(getLibraries(db, " WHERE sub_id = '" + id_sub + "'").length == 0 && domain2 == "lunatech.") {
+        val ll = getLibraries(db, " WHERE sub_id = '" + id_sub + "'")
+        if(ll.length == 0 && domain2 == "lunatech.") {
           createLibrary(db, library(0, false, name, pictureUrl, "N/A", "N/A", "N/A", "N/A", email, "N/A", id_sub, ""))
+        } else if (ll.length >= 0) {
+          outputString = ll(0).admin.toString
         }
       }
     }
-    Ok("performed task")
+    Ok(outputString)
   }
 
   def getLibraries (db : Database, s : String) : List[library] = {

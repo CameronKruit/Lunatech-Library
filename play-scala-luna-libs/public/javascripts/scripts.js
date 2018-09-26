@@ -1,6 +1,7 @@
 var loggedIn;
 var userID;
 var authload = false;
+var admin_rights = false;
 console.log('------------------------------------------');
 //console.log('before loggedin= ' + loggedIn);
 checkLogState();
@@ -115,7 +116,7 @@ function disableVisibility (id, state) {
 }
 
 function sendAuthRequest (id_token) {
-    console.log("received token: " + id_token);
+    console.log("received token: " + id_token.substring(0, 20) + "...");
      console.log("sending auth request");
     var xhr = new XMLHttpRequest();
     console.log("opening xhr");
@@ -123,7 +124,10 @@ function sendAuthRequest (id_token) {
     console.log("setting request header");
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
-       console.log('message: ' + xhr.responseText);
+       console.log('admin rights: ' + xhr.responseText);
+       if(xhr.responseText == "true") {
+        admin_rights = true;
+       }
     };
     xhr.send('idtoken=' + id_token);
 }
